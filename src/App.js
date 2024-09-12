@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import {React, useEffect, useState} from 'react';
+
 
 function App() {
+  const [count,setcount]= useState(0);
+  let [car,setsetCar]=useState({
+    brand:"Toyota",
+    color:"Red",
+    year:"2024"
+  })
+
+  function increament(){
+    setcount(count+1);
+  }
+
+  function decreament() {
+    setcount(count+1);
+    setsetCar(car)
+    
+    }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+        <button onClick={increament} id='increase'>Increase</button>  <span>{car.color} {count}</span><button onClick={decreament} id="decrease">Decrease</button>    
+      
+      
       </header>
+      body
     </div>
   );
 }
